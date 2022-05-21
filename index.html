@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="fabric copy.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <title>P-86 (Additional)</title>
+    <style>
+        button{
+            color: black;
+            font-size: 17.5px;
+            background-color: white;
+        }
+        #myCanvas{
+            background-color: white;
+            border: 3px solid black;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1><u>Spawn a Car</u></h1>
+        <br>
+        <canvas id="myCanvas" height="600" width="1000"></canvas>
+        <br>
+        <button onclick="spawn()">Spawn</button>
+    </center>
+
+    <script>
+        canvas = new fabric.Canvas('myCanvas');
+        bgIMG = '';
+        bgCAR = '';
+        function addBG(){
+            fabric.Image.fromURL('istockphoto-1277468083-640x640.jpeg', function(Img){
+                bgIMG = Img;
+                bgIMG.scaleToWidth(canvas.width);
+                bgIMG.scaleToHeight(canvas.height);
+                bgIMG.set({
+                    top:0,
+                    left:0
+                })
+                canvas.add(bgIMG)
+            })
+        }
+        addBG();
+        function spawn(){
+            fabric.Image.fromURL('3-39021_red-red-car-png-cartoon.png', function(Img){
+                bgIMG = Img;
+                bgIMG.scaleToWidth(300);
+                bgIMG.scaleToHeight(200);
+                bgIMG.set({
+                    top:375,
+                    left:280
+                })
+                canvas.add(bgIMG)
+            })
+        }
+    </script>
+</body>
+
+</html>
